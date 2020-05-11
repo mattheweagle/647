@@ -6,7 +6,7 @@
 	$username = $_POST['uname'];
 	$password = $_POST['psw'];
 	
-	if($stmt = $conn->prepare("SELECT * FROM user WHERE username=? AND password=?")){
+	if($stmt = $conn->prepare("SELECT * FROM User WHERE username=? AND password=?")){
 		$stmt->bind_param('ss',$username,$password);
 		$stmt->execute();
 		$stmt->bind_result($uid,$username,$password);

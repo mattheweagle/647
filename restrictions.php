@@ -5,7 +5,7 @@ include "config.php";
 
 	echo "<table>";
 	$uid = $_SESSION['uid'];
-	if($stmt = $conn->prepare("SELECT restriction FROM userrestriction WHERE UID=?")){
+	if($stmt = $conn->prepare("SELECT restriction FROM UserRestriction WHERE UID=?")){
 		$stmt->bind_param('i',$uid);
 		$stmt->execute();
 		$stmt->bind_result($restriction);
