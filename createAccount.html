@@ -1,0 +1,68 @@
+<form action="create_action.php" method="post" style="border:1px solid #ccc">
+  <div class="container">
+    <h1>Sign Up</h1>
+    <hr>
+
+    <label for="username"><b>Username</b></label>
+    <input type="text" placeholder="Enter Username" name="username" required>
+
+    <label for="psw"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="psw" required>
+
+    <label for="psw-repeat"><b>Repeat Password</b></label>
+    <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
+	<br>
+	<h3>Restrictions</h3>
+	<h4>Diet</h4>
+	<div>
+		<input type="radio" name="restrictionDiet" id = "vegetarian" value="Vegetarian">
+			<label for="1A">Vegetarian</label>
+	</div>
+	<div>
+		<input type="radio" name="restrictionDiet" id = "vegan" value="Vegan">
+			<label for="1A">Vegan</label>
+	</div>
+	<div>
+		<input type="radio" name="restrictionDiet" id = "none" value="None" checked="True">
+			<label for="1A">No diet restriction</label>
+	</div>
+	
+
+	<h4>Other restrictions</h4>
+	
+	<div>
+		<input type="checkbox" name="restriction_list[]" id = "milk" value="Milk">
+			<label for="1A">Milk</label>
+	</div>
+	<div>
+		<input type="checkbox" name="restriction_list[]" id = "egg" value="Egg">
+			<label for="1A">Egg</label>
+	</div>
+	<div>
+		<input type="checkbox" name="restriction_list[]" id = "peanut" value="Peanut">
+			<label for="1A">Peanut</label>
+	</div>
+	<div>
+		<input type="checkbox" name="restriction_list[]" id = "wheat" value="Wheat">
+			<label for="1A">Wheat</label>
+	</div>
+	<div>
+		<input type="checkbox" name="restriction_list[]" id = "soy" value="Soy">
+			<label for="1A">Soy</label>
+	</div>
+	<div>
+		<input type="checkbox" name="restriction_list[]" id = "fish" value="Fish">
+			<label for="1A">Fish</label>
+	</div>
+	<div>
+		<input type="checkbox" name="restriction_list[]" id = "shellfish" value="Shellfish">
+			<label for="1A">Shellfish</label>
+	</div>
+	<br>
+	
+    <div class="clearfix">
+      <button type="button" class="cancelbtn" onclick="window.location.href = 'https://people.eecs.ku.edu/~m955e506/647/';">Cancel</button>
+      <button type="submit" class="signupbtn">Sign Up</button>
+    </div>
+  </div>
+</form>
