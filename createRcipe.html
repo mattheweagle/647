@@ -1,0 +1,28 @@
+<form action = "createRecipe.php" method = "post" style="border:1px solid #ccc">
+    <div class = "container">
+        <h1>Create Recipe</h1>
+        <hr>
+
+        <label for="recipeName"><b>Recipe Name</b></label>
+        <input type="text" placeholder="input recipe name" name="recipeName" required>
+        <br>
+        
+        <label for="ingredient"><b>Ingredient 1</b></label> <input type="text" placeholder="required*" name="ing1" required> <label for="quantity"><b>Quantity</b></label> <input type="number" placeholder="quantity required*" name="ingq1" min="0" required>
+        <br>
+        <label for="ingredient"><b>Ingredient 2</b></label> <input type="text" placeholder="optional" name="ing2" optional> <label for="quantity"><b>Quantity</b></label> <input type="number" placeholder="quantity optional" name="ingq2" min="0">
+        <br>
+        <label for="ingredient"><b>Ingredient 3</b></label> <input type="text" placeholder="optional" name="ing3" optional> <label for="quantity"><b>Quantity</b></label> <input type="number" placeholder="quantity optional" name="ingq3" min="0">
+        <br>
+        <label for="ingredient"><b>Ingredient 4</b></label> <input type="text" placeholder="optional" name="ing4" optional> <label for="quantity"><b>Quantity</b></label> <input type="number" placeholder="quantity optional" name="ingq4" min="0">
+        <br>
+        <label for="ingredient"><b>Ingredient 5</b></label> <input type="text" placeholder="optional" name="ing5" optional> <label for="quantity"><b>Quantity</b></label> <input type="number" placeholder="quantity optional" name="ingq5" min="0">
+        <br>
+
+        <label for="recipe"><b>Recipe Detail</b></label><br>
+        <textarea placeholder="input recipe detail" name="recipe" rows="10" colunms="100" required></textarea>
+
+        <div class="clearfix">
+            <button type="button" class="cancelbtn" onclick="window.location.href = 'https://people.eecs.ku.edu/~m955e506/647/home.php';">Cancel</button>
+            <button type="submit" class="ssubmitbtn">submit</button>
+        </div>
+    </div>
