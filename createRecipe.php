@@ -65,7 +65,11 @@
             $stmt->execute();
             }
         }
-
+		
+		if($stmt = $conn->prepare("INSERT INTO SAVE (UID, RID) VALUES(?, ?)")){
+            $stmt->bind_param("ii", $_SESSION["uid"], $last_id);
+            $stmt->execute();
+        }
         echo("Upload Success.");
         header('Location: home.php');
     }
