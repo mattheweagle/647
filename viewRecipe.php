@@ -7,6 +7,7 @@ if(!isset($_SESSION['uid'])){
 }
 
 $rid = $_GET["rid"];
+$uid = $_SESSION["UID"];
 
 $sql = "SELECT RecName, instruction FROM Recipe WHERE RID = ?";
 
@@ -36,6 +37,8 @@ if($stmt = $conn->prepare($sql)){
             }
         }
     }
+
+    echo $instructiontext
     ?>
 
 
