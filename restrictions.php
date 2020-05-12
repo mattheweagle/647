@@ -15,5 +15,4 @@ include "config.php";
 		$stmt->close();
 	}
 	echo "</table>";
-	echo "<br><button type='button' class='goBack' onclick='window.location.href = \"https://people.eecs.ku.edu/~m955e506/647/home.php\";'>Go back</button>";
 ?>

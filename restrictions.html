@@ -1,9 +1,42 @@
 <html>
-	<head>
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
+    <title>Home</title>
   </head>
   <body>
-			<?php include 'restrictions.php';?>
+    <h1>Home</h1>
+	<!-- Grey with black text -->
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+  <ul class="navbar-nav">
+    <li class="nav-item">
+      <a class="nav-link" href="/~m955e506/647/restrictions.php">View my restrictions</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="/~m955e506/647/createRecipe.html">Upload a recipe</a>
+    </li>
+	<li class="nav-item">
+      <a class="nav-link" href="/~m955e506/647/viewSavedRecipes.html">View my saved recipes</a>
+    </li>
+	<li class="nav-item">
+      <a class="nav-link" href="/~m955e506/647/viewAllRecipes.html">Browse all recipes</a>
+    </li>
+	<li class="nav-item">
+      <a class="nav-link" href="/~m955e506/647/index.html">Log out</a>
+    </li>
+  </ul>
+</nav>
+	<div class="row">
+		<div class="col-sm-4"></div>
+		<div class="col-sm-4"><?php include 'restrictions.php';?></div>
+		<div class="col-sm-4"></div>
+    </div>
+			
   </body>
 
 

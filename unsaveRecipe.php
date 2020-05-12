@@ -44,12 +44,12 @@ include "config.php";
 
 	$rid = $_GET["rid"];
 	$uid = $_SESSION["uid"];
-	if($stmt = $conn->prepare("INSERT INTO SAVE (UID, RID) VALUES(?,?)")){
+	if($stmt = $conn->prepare("DELETE FROM SAVE WHERE UID=? AND RID=?")){
 		$stmt->bind_param("ii", $uid, $rid);
 		$stmt->execute();
 		$stmt->close();
 	} 
-	echo "Recipe saved!<br>";
+	echo "Recipe no longer saved<br>";
 ?>
 
     <!-- Optional JavaScript -->

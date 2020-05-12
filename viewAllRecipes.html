@@ -34,23 +34,46 @@
 </nav>
 
 
-<?php
-include "config.php";
-	
-	// Check user login or not
-	if(!isset($_SESSION['uid'])){
-		header('Location: index.html');
-	}
 
-	$rid = $_GET["rid"];
-	$uid = $_SESSION["uid"];
-	if($stmt = $conn->prepare("INSERT INTO SAVE (UID, RID) VALUES(?,?)")){
-		$stmt->bind_param("ii", $uid, $rid);
-		$stmt->execute();
-		$stmt->close();
-	} 
-	echo "Recipe saved!<br>";
-?>
+
+	<?php
+	include "config.php";
+
+		error_reporting(E_ALL);
+		ini_set("display_errors", 1);
+		$first = True;
+		$uid = $_SESSION['uid'];
+		$lastName = "this will never be the name of the first recipe hopefully";
+		if($stmt = $conn->prepare("SELECT Recipe.RID,Recipe.RecName, Recipe.instructions FROM Recipe")){
+			$stmt->execute();
+			$stmt->bind_result($rid,$RecName,$instructions);
+			while($stmt->fetch()){
+				if($RecName != $lastName){
+					if(!$first){
+						echo "</table>";
+						echo "</div>";
+						echo "</div>";
+					}
+					if($first){
+						$first = False;
+					}
+					echo "<div class=\"row\">";
+					echo "<div class=\"col-sm-4\">";
+					echo "<table>";
+					echo "<tr><th>Recipe name</th><td><a href=\"/~m955e506/647/viewRecipe.php?rid=".$rid."\">".$RecName."</a></td></tr>";
+					echo "<tr><th>Instructions</th><td>".$instructions."</td></tr>";
+				}
+			}	
+			$stmt->close();
+		}
+		else{
+			echo "fail";
+		}
+		echo "</table>";
+		echo "</div>";
+		echo "</div>";
+	?>
+	
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
