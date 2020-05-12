@@ -22,6 +22,8 @@ include "config.php";
 		<a href="/~m955e506/647/createRecipe.html">Upload a recipe</a>
 		<br>
 		<a href="/~m955e506/647/viewSavedRecipes.php">View my saved recipes</a>
+		<br>
+		<a href="/~m955e506/647/viewAllRecipes.php">Browse all recipes</a>
         <form method='post' action="">
             <input type="submit" value="Logout" name="but_logout">
         </form>
