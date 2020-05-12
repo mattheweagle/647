@@ -31,4 +31,5 @@ include "config.php";
 	echo "<form action=\"saveRecipe.php?rid=".$rid."\" method=\"post\">";
     echo "<input type=\"submit\" name=\"saveRecipe\" value=\"Save Recipe\" />";
     echo "</form>";
+	echo "<br><button type='button' class='goBack' onclick='window.location.href = \"https://people.eecs.ku.edu/~m955e506/647/viewAllRecipes.php\";'>Back</button>";
 ?>
