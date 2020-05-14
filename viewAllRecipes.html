@@ -44,9 +44,10 @@
 		$first = True;
 		$uid = $_SESSION['uid'];
 		$lastName = "this will never be the name of the first recipe hopefully";
-		if($stmt = $conn->prepare("SELECT Recipe.RID,Recipe.RecName, Recipe.instructions FROM Recipe")){
+		$sqlQuery = "SELECT User.username, Recipe.RID,Recipe.RecName, Recipe.instructions FROM Recipe INNER JOIN Upload ON Recipe.RID = Upload.RID INNER JOIN User ON User.UID = Upload.UID";
+		if($stmt = $conn->prepare($sqlQuery)){
 			$stmt->execute();
-			$stmt->bind_result($rid,$RecName,$instructions);
+			$stmt->bind_result($userUpload,$rid,$RecName,$instructions);
 			while($stmt->fetch()){
 				if($RecName != $lastName){
 					if(!$first){
@@ -61,7 +62,7 @@
 					echo "<div class=\"col-sm-4\">";
 					echo "<table>";
 					echo "<tr><th>Recipe name</th><td><a href=\"/~m955e506/647/viewRecipe.php?rid=".$rid."\">".$RecName."</a></td></tr>";
-					echo "<tr><th>Instructions</th><td>".$instructions."</td></tr>";
+					echo "<tr><th>Uploaded by</th><td>".$userUpload."</td></tr>";
 				}
 			}	
 			$stmt->close();

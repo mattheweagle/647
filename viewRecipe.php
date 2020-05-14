@@ -64,6 +64,15 @@ include "config.php";
 		}
 		$stmt->close();
 	}
+	$sqlQuery = "SELECT * FROM Contains INNER JOIN UserRestriction ON Contains.IngName = UserRestriction.restriction AND Contains.RID=? AND UserRestriction.UID=?";
+	if($stmt = $conn->prepare($sqlQuery)){
+		$stmt->bind_param("ii", $rid,$_SESSION["uid"]);
+		$stmt->execute();
+		if($stmt->fetch()){
+			echo "WARNING. THIS RECIPE CONTAINS AN INGREDIENT IN YOUR RESTRICTIONS<br>";
+		}
+		$stmt->close();
+	}
 	if($stmt = $conn->prepare("SELECT * FROM SAVE WHERE RID=? AND UID=?")){
 		$stmt->bind_param("ii", $rid,$_SESSION["uid"]);
 		$stmt->execute();
